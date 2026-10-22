@@ -321,7 +321,6 @@ header::before {
     margin: 0;
     flex: 1;
 }
-/* ===== БЕГУЩАЯ СТРОКА ===== */
 .marquee {
     overflow: hidden;
     white-space: nowrap;
@@ -334,8 +333,6 @@ header::before {
     letter-spacing: 1px;
     position: relative;
 }
-
-
 .marquee-track {
     display: inline-block;
     padding-left: 100%;               
@@ -347,7 +344,6 @@ header::before {
     margin-right: 30px;               
 }
 
-/* Сама анимация */
 @keyframes marquee-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-100%); }
@@ -439,23 +435,26 @@ figure.image:hover .img-caption {
     background-repeat: no-repeat;
     background-attachment: fixed;        
     color: #E7E4D8;
-    
-    /* Такие же отступы, как у header, но зеркально */
     padding: 120px 60px;
-    margin: 60px -120px -40px -120px;    /* сверху 60, по бокам -120, снизу -40 */
+    margin: 60px -120px -40px -120px;   
     
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-/* Затемнение поверх картинки */
-
-
-/* ===== ПОДПИСЬ АВТОРА ===== */
+.bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+}
 .banner-signature {
     position: relative;
-    z-index: 2;                     /* поверх затемнения */
+    z-index: 2;                   
     text-align: center;
     color: #E7E4D8;
     padding: 0 20px;
@@ -497,17 +496,12 @@ figure.image:hover .img-caption {
     color: #D7859F;
     border-color: #D7859F;
 }
-/* ===== КАРУСЕЛЬ ПРЕДМЕТОВ (Причина 4) ===== */
 .carousel-wrapper {
     position: relative;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-/* Затемнение по краям — как в дорогих галереях */
-
-
-/* Сама лента */
 .carousel {
     display: flex;
     gap: 20px;
@@ -516,27 +510,23 @@ figure.image:hover .img-caption {
     scroll-behavior: smooth;
     padding: 20px 40px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* Edge/IE */
+    scrollbar-width: none;        
+    -ms-overflow-style: none;    
 }
 
 
-
-/* Карточка предмета */
 .carousel-item {
-    flex: 0 0 200px;                    /* фиксированная ширина карточки */
-    scroll-snap-align: center;          /* прилипает к центру */
+    flex: 0 0 200px;                    
+    scroll-snap-align: center;         
     margin: 0;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-/* Лёгкий подъём при наведении */
 .carousel-item:hover {
     transform: translateY(-5px);
 }
 
-/* Картинка */
 .carousel-item img {
     width: 180px;
     height: 180px;
@@ -551,7 +541,6 @@ figure.image:hover .img-caption {
     filter: brightness(0.9);
 }
 
-/* Подпись под предметом */
 .carousel-item figcaption {
     font-size: 14px;
     color: #1A1A1A;
@@ -565,7 +554,6 @@ figure.image:hover .img-caption {
     color: #D7859F;
     opacity: 1;
 }
-/* Радио-карточка с мини-плеером */
 .radio-popup {
     margin-top: 10px;
     font-size: 13px;
@@ -609,9 +597,6 @@ article.film-details {
 article.film-details details {
     width: 100%;
 }
-/* ===== АДАПТИВНОСТЬ ===== */
-
-/* ---------- Планшет: до 1100px ---------- */
 @media (max-width: 1100px) {
     body {
         padding: 30px 50px;
@@ -632,8 +617,6 @@ article.film-details details {
         padding: 90px 50px;
     }
 }
-
-/* ---------- Телефон: до 800px ---------- */
 @media (max-width: 800px) {
     body {
         padding: 20px 24px;
@@ -644,37 +627,32 @@ article.film-details details {
     h2 { font-size: 22px; }
     h3 { font-size: 18px; }
 
-    /* Шапка */
     header {
         margin: -20px -24px 24px -24px;
         padding: 60px 24px;
-        background-attachment: scroll;   /* fixed плохо работает на мобильных */
+        background-attachment: scroll;   
     }
 
     header h1 { font-size: 30px; }
     header p  { font-size: 16px; }
 
-    /* Бегущая строка */
     .marquee {
         margin-left: -24px;
         margin-right: -24px;
         font-size: 15px;
     }
 
-    /* Нижний баннер */
     .bottom-banner {
         margin: 40px -24px -20px -24px;
         padding: 60px 24px;
         background-attachment: scroll;
     }
 
-    /* Навигация — в столбик */
     nav li {
         display: block;
         margin: 0 0 6px 0;
     }
 
-    /* Галерея актёров — в столбик */
     .gallery {
         flex-direction: column;
     }
@@ -683,7 +661,6 @@ article.film-details details {
         height: 220px;
     }
 
-    /* Текст + фото — в столбик */
     .text-image {
         flex-direction: column;
     }
@@ -711,19 +688,16 @@ article.film-details details {
         transform: none;
     }
 
-    /* Скрываем первую (главную) картинку */
     figure.image .img-default {
         display: none;
     }
 
-    /* Показываем вторую — ту, что с подписью */
     figure.image .img-hover {
         display: block;
         opacity: 1;
         position: relative;
     }
 
-    /* Подпись — постоянная, под картинкой */
     figure.image .img-caption {
         position: static;
         opacity: 1;
@@ -747,12 +721,10 @@ article.film-details details {
     background-color: #f0eee3;
 }
 
-    /* Подблоки — компактнее */
     .subsections {
         padding: 14px 16px;
     }
 
-    /* Карусель — карточки меньше */
     .carousel-item {
         flex: 0 0 160px;
     }
@@ -762,7 +734,6 @@ article.film-details details {
         height: 140px;
     }
 
-    /* Цитата */
     .quote {
         font-size: 18px;
         margin-top: 50px;

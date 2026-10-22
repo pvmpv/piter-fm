@@ -1,0 +1,799 @@
+@font-face {
+            font-family: 'Soyuz Grotesk';
+            src: url('Soyuz_Grotesk_Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('Montserrat-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #f0eee3;
+            color: #1A1A1A;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 120px;
+            position: relative;     
+            overflow-x: hidden;  
+        }
+h1, h2, h3 {
+    font-family: 'Soyuz Grotesk', sans-serif;
+    line-height: 1.2;
+    margin-top: 0;          
+}
+
+h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-top: 40px;      
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+p, ul {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;       
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 0;       
+}
+
+nav a {
+    color: #1A1A1A;
+    text-decoration: none;
+    border-bottom: 1px solid #1A1A1A;
+}
+
+        footer {
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+        }
+.accent {
+    font-style: italic;
+    color: #D7859F;
+}
+header {
+    position: relative;
+    background-image: url('15.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #E7E4D8;
+    padding: 120px 120px;
+    margin: -40px -120px 40px -120px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+.shapka-tekst {
+    position: relative;
+    z-index: 2;
+}
+.shapka-tekst h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #E7E4D8;
+}
+
+.shapka-tekst p {
+    font-size: 18px;
+    max-width: 700px;
+    color: #E7E4D8;
+}
+
+.gallery {
+    display: flex;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    filter: brightness(0.55) contrast(1.1);
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 15px 15px 15px;
+    background: linear-gradient(
+        to top,
+        rgba(26, 26, 26, 0.95) 0%,
+        rgba(26, 26, 26, 0.7) 60%,
+        transparent 100%
+    );
+    color: #E7E4D8;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-caption-title {
+    display: block;
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 16px;
+    color: #D7859F;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.gallery-caption-text {
+    display: block;
+    font-size: 12px;
+    color: #E7E4D8;
+    opacity: 0.85;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+}
+
+.text-image {
+    display: flex;
+    flex-direction: row;        
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+.text-image .text {
+    flex: 1;
+}
+
+.text-image .image {
+    flex: 0 0 300px;          
+}
+
+.text-image .image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+   
+.quote {
+    margin-top: 80px;       
+    margin-bottom: 0;     
+    text-align: left;
+    font-style: italic;
+    color: #D7859F;
+    font-size: 20px;        
+    line-height: 1.4;
+}
+
+
+.framed {
+    border: none;
+    border-left: 4px solid #D7859F;
+    padding: 5px 0 5px 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: none;
+}
+
+.framed h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.framed p:last-child {
+    margin-bottom: 0;
+}
+.film-details {
+    border-top: 1px solid #1A1A1A;
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.film-details:last-of-type {
+    border-bottom: 1px solid #1A1A1A;
+}
+
+.film-details[open] {
+    background-color: rgba(215, 133, 159, 0.05);
+}
+
+.film-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+
+.film-details summary:hover {
+    color: #D7859F;
+}
+
+.film-title {
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.film-meta {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.film-details summary::after {
+    content: '+';
+    font-size: 24px;
+    line-height: 1;
+    color: #D7859F;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+.film-details[open] summary::after {
+    content: '-';
+}
+
+.film-body {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 20px 0 10px 0;
+}
+
+.film-body img {
+    flex: 0 0 220px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.film-body p {
+    margin: 0;
+    flex: 1;
+}
+/* ===== БЕГУЩАЯ СТРОКА ===== */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #342e2e;
+    color: #D7859F;
+    padding: 14px 0;
+    margin: 40px -120px;             
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+
+.marquee-track {
+    display: inline-block;
+    padding-left: 100%;               
+    animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-track span {
+    display: inline-block;
+    margin-right: 30px;               
+}
+
+/* Сама анимация */
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+
+figure.image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: 300px;                
+}
+
+figure.image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+figure.image .img-default {
+    opacity: 1;
+    z-index: 1;
+}
+
+figure.image .img-hover {
+    opacity: 0;
+    z-index: 2;
+}
+
+figure.image:hover .img-default {
+    opacity: 0;
+}
+
+figure.image:hover .img-hover {
+    opacity: 1;
+    transform: scale(1.05);        
+}
+.img-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(26, 26, 26, 0.9) 0%,
+        rgba(26, 26, 26, 0.7) 60%,
+        transparent 100%
+    );
+    color: #E7E4D8;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 3;                    
+    pointer-events: none;
+}
+
+figure.image:hover .img-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.caption-title {
+    display: block;
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 20px;
+    color: #D7859F;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.caption-address {
+    display: block;
+    font-size: 13px;
+    color: #E7E4D8;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+}
+.bottom-banner {
+    position: relative;
+    background-image: url('15.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;        
+    color: #E7E4D8;
+    
+    /* Такие же отступы, как у header, но зеркально */
+    padding: 120px 60px;
+    margin: 60px -120px -40px -120px;    /* сверху 60, по бокам -120, снизу -40 */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Затемнение поверх картинки */
+
+
+/* ===== ПОДПИСЬ АВТОРА ===== */
+.banner-signature {
+    position: relative;
+    z-index: 2;                     /* поверх затемнения */
+    text-align: center;
+    color: #E7E4D8;
+    padding: 0 20px;
+}
+
+.signature-line {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.signature-name {
+    margin: 0 0 12px 0;
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 26px;
+    color: #D7859F;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.signature-contact {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.signature-contact a {
+    color: #E7E4D8;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(231, 228, 216, 0.4);
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.signature-contact a:hover {
+    color: #D7859F;
+    border-color: #D7859F;
+}
+/* ===== КАРУСЕЛЬ ПРЕДМЕТОВ (Причина 4) ===== */
+.carousel-wrapper {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Затемнение по краям — как в дорогих галереях */
+
+
+/* Сама лента */
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 40px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* Edge/IE */
+}
+
+
+
+/* Карточка предмета */
+.carousel-item {
+    flex: 0 0 200px;                    /* фиксированная ширина карточки */
+    scroll-snap-align: center;          /* прилипает к центру */
+    margin: 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Лёгкий подъём при наведении */
+.carousel-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Картинка */
+.carousel-item img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.9);
+}
+
+/* Подпись под предметом */
+.carousel-item figcaption {
+    font-size: 14px;
+    color: #1A1A1A;
+    line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-item:hover figcaption {
+    color: #D7859F;
+    opacity: 1;
+}
+/* Радио-карточка с мини-плеером */
+.radio-popup {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.radio-popup summary {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: #D7859F;
+    color: #fff;
+    border-radius: 20px;
+    font-family: 'Soyuz Grotesk', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s ease;
+}
+
+.radio-popup summary:hover {
+    background-color: #c46b87;
+}
+
+.radio-popup[open] summary {
+    background-color: #1A1A1A;
+}
+
+.radio-mini {
+    width: 200px;
+    margin-top: 12px;
+    display: block;
+    accent-color: #D7859F;
+}
+.subsections {
+    margin: 1.5rem 0;
+}
+
+article.film-details {
+    display: block;
+}
+
+article.film-details details {
+    width: 100%;
+}
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* ---------- Планшет: до 1100px ---------- */
+@media (max-width: 1100px) {
+    body {
+        padding: 30px 50px;
+    }
+
+    header {
+        margin: -30px -50px 30px -50px;
+        padding: 90px 50px;
+    }
+
+    .marquee {
+        margin-left: -50px;
+        margin-right: -50px;
+    }
+
+    .bottom-banner {
+        margin: 50px -50px -30px -50px;
+        padding: 90px 50px;
+    }
+}
+
+/* ---------- Телефон: до 800px ---------- */
+@media (max-width: 800px) {
+    body {
+        padding: 20px 24px;
+        font-size: 15px;
+    }
+
+    h1 { font-size: 34px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+
+    /* Шапка */
+    header {
+        margin: -20px -24px 24px -24px;
+        padding: 60px 24px;
+        background-attachment: scroll;   /* fixed плохо работает на мобильных */
+    }
+
+    header h1 { font-size: 30px; }
+    header p  { font-size: 16px; }
+
+    /* Бегущая строка */
+    .marquee {
+        margin-left: -24px;
+        margin-right: -24px;
+        font-size: 15px;
+    }
+
+    /* Нижний баннер */
+    .bottom-banner {
+        margin: 40px -24px -20px -24px;
+        padding: 60px 24px;
+        background-attachment: scroll;
+    }
+
+    /* Навигация — в столбик */
+    nav li {
+        display: block;
+        margin: 0 0 6px 0;
+    }
+
+    /* Галерея актёров — в столбик */
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+    /* Текст + фото — в столбик */
+    .text-image {
+        flex-direction: column;
+    }
+
+    .text-image .image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 240px;
+    }
+
+@media (max-width: 800px) {
+     #about .subsections h3 {
+        display: none;
+    }
+    figure.image {
+        height: auto;
+        width: 100%;
+    }
+
+    figure.image img {
+        position: static;
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+        transform: none;
+    }
+
+    /* Скрываем первую (главную) картинку */
+    figure.image .img-default {
+        display: none;
+    }
+
+    /* Показываем вторую — ту, что с подписью */
+    figure.image .img-hover {
+        display: block;
+        opacity: 1;
+        position: relative;
+    }
+
+    /* Подпись — постоянная, под картинкой */
+    figure.image .img-caption {
+        position: static;
+        opacity: 1;
+        transform: none;
+        background: #1A1A1A;
+        padding: 12px 16px;
+    }
+}
+
+    .film-body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+.film-body img {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    background-color: #f0eee3;
+}
+
+    /* Подблоки — компактнее */
+    .subsections {
+        padding: 14px 16px;
+    }
+
+    /* Карусель — карточки меньше */
+    .carousel-item {
+        flex: 0 0 160px;
+    }
+
+    .carousel-item img {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Цитата */
+    .quote {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 26px; }
+
+    header h1 { font-size: 24px; }
+    header p  { font-size: 15px; }
+
+    .film-details summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .film-meta {
+        white-space: normal;
+    }
+
+    .gallery-item img {
+        height: 180px;
+    }
+
+    .carousel-item {
+        flex: 0 0 140px;
+    }
+
+    .carousel-item img {
+        width: 120px;
+        height: 120px;
+    }
+}

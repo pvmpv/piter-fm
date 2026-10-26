@@ -86,8 +86,8 @@ nav a {
 }
 
         footer {
-            margin-top: 15px;
-            padding-top: 20px;
+            margin-top: 60px;
+            padding-top: 25px;
             border-top: 1px solid #ccc;
             font-size: 14px;
             color: #555;
@@ -222,8 +222,8 @@ header::before {
 }
    
 .quote {
-    margin-top: 80px;       
-    margin-bottom: 0;     
+    margin-top: 0px;       
+    margin-bottom: 20px;     
     text-align: left;
     font-style: italic;
     color: #D7859F;
